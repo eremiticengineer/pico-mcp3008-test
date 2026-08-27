@@ -1,6 +1,6 @@
 # FreeRTOS Test
 
-This is a simple project to run a very simple FreeRTOS app on the pico that queries an MCP3008 A/D converter over SPI.
+This is a simple project to run a very simple FreeRTOS app on the pico that queries an MCP3008 A/D converter over SPI and translates the value to a wind direction.
 
 ## Cloning the project
 
