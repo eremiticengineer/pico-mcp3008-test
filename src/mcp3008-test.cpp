@@ -50,64 +50,6 @@ void getDirectionFromADCValue(int adcValue, char* buffer) {
     if ((adcValue >= 660) && (adcValue <= 670)) strcpy(buffer, "NNW"); // 663
 }
 
-/*
-void wind_direction_task(__unused void* pvParameters)
-{
-    spi_init(SPI_PORT, 100000);
-
-    spi_set_format(
-        SPI_PORT,
-        8,
-        SPI_CPOL_0,
-        SPI_CPHA_0,
-        SPI_MSB_FIRST
-    );
-
-    gpio_set_function(CLK_PIN, GPIO_FUNC_SPI);
-    gpio_set_function(MOSI_PIN, GPIO_FUNC_SPI);
-    gpio_set_function(MISO_PIN, GPIO_FUNC_SPI);
-
-    gpio_init(CS_PIN);
-    gpio_set_dir(CS_PIN, GPIO_OUT);
-    gpio_put(CS_PIN, 1);
-
-    while (true)
-    {
-        uint8_t tx[3] = {
-            0x01,
-            0x80,       // single ended, channel 0
-            0x00
-        };
-
-        uint8_t rx[3] = {0};
-
-        gpio_put(CS_PIN, 0);
-
-        spi_write_read_blocking(
-            SPI_PORT,
-            tx,
-            rx,
-            3
-        );
-
-        gpio_put(CS_PIN, 1);
-
-        int value =
-            ((rx[1] & 0x03) << 8) |
-            rx[2];
-
-        printf(
-            "TX: %02X %02X %02X  RX: %02X %02X %02X  ADC: %d\n",
-            tx[0], tx[1], tx[2],
-            rx[0], rx[1], rx[2],
-            value
-        );
-
-        vTaskDelay(1000);
-    }
-}
-*/
-
 void wind_direction_task(__unused void* pvParameters) {
   spi_init(SPI_PORT, 100000);
   spi_set_format(SPI_PORT, 8, (spi_cpol_t)0, (spi_cpha_t)0, SPI_MSB_FIRST);
