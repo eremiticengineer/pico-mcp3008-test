@@ -7,7 +7,7 @@ This is a simple project to run a very simple FreeRTOS app on the pico that quer
 Clone the project with FreeRTOS submodules to get the pico functionality:
 
 ```
-git clone --recurse-submodules <your-repo-url>
+git clone --recurse-submodules https://github.com/eremiticengineer/pico-mcp3008-test
 ```
 
 If you cloned without recursing submodules:
