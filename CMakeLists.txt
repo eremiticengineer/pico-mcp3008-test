@@ -13,8 +13,6 @@ set(CMAKE_CXX_STANDARD 23)
 
 pico_sdk_init()
 
-message(STATUS ">>>>>>>>>>>>>>>>>>>>> PICO_PLATFORM=${PICO_PLATFORM}")
-
 set(FREERTOS_KERNEL_PATH
     ${CMAKE_CURRENT_LIST_DIR}/lib/FreeRTOS-Kernel
 )
